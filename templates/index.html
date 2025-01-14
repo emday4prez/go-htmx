@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTMX Example</title>
+  <title>HTMX + Go</title>
   <script src="https://unpkg.com/htmx.org"></script>
 </head>
 <body>
-  <h1>Welcome to HTMX</h1>
-  <form hx-post="/submit" hx-target="#response">
-    <input type="text" name="data" placeholder="Type something" required>
-    <button type="submit">Submit</button>
+  <h1>HTMX + Go CRUD App</h1>
+
+  <!-- Form for adding items -->
+  <form hx-post="/add" hx-target="#messages" hx-swap="beforeend">
+    <input type="text" name="message" placeholder="Enter a message" required>
+    <button type="submit">Add</button>
   </form>
-  <div id="response"></div>
+
+  <h2>Messages</h2>
+  <ul id="messages">
+    {{range .}}
+      <li>{{.}} <button hx-post="/delete" hx-vals='{"message":"{{.}}"}'>Delete</button></li>
+    {{end}}
+  </ul>
 </body>
 </html>
