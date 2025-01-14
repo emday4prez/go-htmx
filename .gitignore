@@ -1,0 +1,52 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Dependency directories and files
+/vendor/
+/node_modules/
+go.sum
+go.work
+
+# HTMX-related build and temp files
+dist/
+/public/js/*.min.js
+/public/css/*.min.css
+
+# Editor and OS-specific files
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+.idea/
+/.vscode/
+/*.code-workspace
+
+# Logs and debugging files
+*.log
+*.trace
+
+# Environment and configuration files
+.env
+.env.*
+config.yaml
+*.local.yaml
+
+# Temporary and cache files
+*.tmp
+*.bak
+*.cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage.out
+
+# Go tools cache
+/go/pkg/
